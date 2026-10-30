@@ -52,6 +52,8 @@ The response body contained serialized React Server Component / Flight-style pay
 
 **Assessment:** These are strong indicators of Next.js App Router and React Server Components navigation. They do not identify the business backend or prove that all application data is delivered through conventional REST APIs.
 
+The response body was a serialized React Server Component (RSC) / Flight-style stream, rather than a conventional JSON API response.
+
 ### 3.2 Hosting and delivery indicators
 The inspected homepage and Contact responses included `Server: Vercel`, `X-Vercel-Cache: HIT`, `X-Matched-Path`, and `X-Vercel-Id`.
 
@@ -90,7 +92,7 @@ Interpretation:
 - HSTS advertises a 63,072,000-second (two-year) HTTPS policy for the host that emitted the header.
 - `ETag` provides a validator that can support conditional cache revalidation.
 - `X-Vercel-Cache: HIT` indicates a cache hit for this response.
-- `Access-Control-Allow-Origin: *` was observed on the homepage HTML response. Its presence on an HTML document does not establish that sensitive API endpoints allow cross-origin reads.
+- `Access-Control-Allow-Origin: *` was observed on the homepage HTML response. The observed wildcard header applies to the captured homepage response. Its security significance cannot be determined without inspecting the relevant API responses and their credential-handling behaviour.
 - `Age` reports the age of the cached response as represented by the intermediary. A large value alone does not prove stale or incorrect content.
 
 ### 4.2 Contact navigation response
@@ -141,6 +143,8 @@ No explicit `action`, `method`, or `enctype` attribute was visible. The submit b
 Browser developer tools showed document-level `click` and `submit` event listeners associated with the main framework bundle and analytics scripts. Both capture- and bubble-phase submit listeners were reported.
 
 **Assessment:** The evidence is consistent with framework-level event delegation and possibly JavaScript-managed form submission. It does not identify the exact handler, request destination, HTTP method, payload, API route, or backend processing. No form submission was performed.
+
+The inspected RSC navigation response does not establish the Contact form's submission endpoint or processing workflow.
 
 ## 6. Performance Observations
 
