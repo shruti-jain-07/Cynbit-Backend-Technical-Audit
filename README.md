@@ -7,12 +7,31 @@
 ## Purpose
 This repository documents observable HTTP response metadata, framework/hosting indicators, Contact form markup, browser event-listener observations, and defensive recommendations.
 
+## Project documentation
+
+- [Backend Technical Audit](report/Backend_Technical_Audit.md)
+- [Security & Performance Findings](report/Security_Performance_Findings.md)
+- [Recommended Improvements](report/Recommended_Improvements.md)
+- [Evidence Register](evidence/observations.md)
+- [Proposed Architecture](architecture/proposed_architecture.md)
+
 ## Scope limitations
 - No Contact form was submitted and no test inquiry was created.
 - No authenticated/private resources were accessed.
 - No active scanning, fuzzing, brute force, exploit attempts, or load testing was performed.
 - The actual form submission endpoint, backend framework, database, server-side validation, persistence, and authentication design were not confirmed.
 - Recommendations are proposals, not claims about Cynbit's deployed implementation.
+- The proposed architecture represents a recommended design exercise, not a verified representation of Cynbit's actual backend architecture.
+
+## Code examples
+
+The Python examples demonstrate proposed backend engineering practices:
+
+- Input validation with field-specific error reporting.
+- Consistent API error-response structures.
+- Safe handling of internal errors without exposing sensitive diagnostic details.
+
+These are illustrative examples developed as part of this assessment. They are not extracted from or integrated with Cynbit's production backend.
 
 ## Repository structure
 ```text
@@ -46,3 +65,9 @@ Passive backend-focused technical audit of Cynbit's public website, including ob
 
 ## Suggested GitHub topics
 `backend-audit` `web-security` `performance-review` `nextjs` `technical-assessment`
+
+## Conclusion
+
+This project demonstrates a structured approach to passive website assessment, HTTP analysis, security-conscious backend recommendations, and practical Python implementation examples.
+
+The findings are limited to publicly observable evidence. Further backend verification would require authorized access to a suitable test environment or implementation details.
