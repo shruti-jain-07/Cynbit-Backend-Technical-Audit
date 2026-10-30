@@ -27,6 +27,7 @@
 | O-19 | Events | Document-level click and submit listeners visible; framework and analytics scripts associated | Consistent with event delegation; exact business handler unknown |
 | O-20 | Performance | One Network snapshot: 74 requests total; 25 visible under Fetch/XHR; ~262 KB transferred; ~3,401 KB resources | Snapshot only, not benchmark |
 | O-21 | Performance | Visible request timings ranged roughly 107–337 ms, with one around 1.43 s | Individual timings; root cause unknown |
+| O-22 | Response | Contact response body contained a serialized React Server Component (RSC) stream | Consistent with Next.js RSC response; does not establish that a form submission or API call occurred |
 
 ## Evidence handling
 - Save original screenshots in `evidence/screenshots/`.
