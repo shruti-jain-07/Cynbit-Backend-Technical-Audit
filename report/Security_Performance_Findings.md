@@ -47,7 +47,7 @@
 **Severity:** Informational  
 **Status:** Evidence gap
 
-**Evidence:** The form has no explicit `action` or `method` attribute. Document-level click and submit listeners were visible.
+**Evidence:** The form has no explicit `action` or `method` attribute. Document-level click and submit listeners were visible. The inspected Contact response returned a serialized React Server Component (RSC) stream with the `text/x-component` content type.
 
 **Impact:** Passive evidence does not reveal submission destination, method, payload schema, authentication requirements, persistence, or notification workflow. This is an assessment limitation, not a defect.
 
