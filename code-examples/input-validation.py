@@ -17,7 +17,8 @@ class ValidationError(ValueError):
         self.fields = fields
 
 
-EMAIL_PATTERN = re.compile(r"^[^@\\s]+@[^@\\s]+\\.[^@\\s]+$")
+EMAIL_PATTERN = re.compile(r"^[^@\s]+@[^@\s]+\.[^@\s]+$")
+
 
 
 def validate_contact_payload(payload: dict) -> ContactInput:
@@ -60,6 +61,8 @@ def validate_contact_payload(payload: dict) -> ContactInput:
     return ContactInput(full_name, email, company, industry, message)
 
 
+
+
 if __name__ == "__main__":
     sample = {
         "fullName": "Alex Rivera",
@@ -68,4 +71,9 @@ if __name__ == "__main__":
         "industry": "Fintech",
         "message": "We would like to discuss a software project.",
     }
-    print(validate_contact_payload(sample))
+
+    try:
+        result = validate_contact_payload(sample)
+        print(result)
+    except ValidationError as error:
+        print("Validation failed:", error.fields)
