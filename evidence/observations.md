@@ -30,7 +30,7 @@
 
 ## Evidence handling
 - Save original screenshots in `evidence/screenshots/`.
-- Suggested filenames: `01-network-overview.png`, `02-contact-response-headers.png`, `03-homepage-response-headers.png`, `04-contact-form-dom.png`, `05-event-listeners.png`.
+- Screenshots included: Network-Snapshot.png, Contact-Header.png, Contact-HeaderGeneral.png, Contact-Response.png, Contact-ResponseHeader.png, Cynbit-ResponseHeader.png, EventListener.png.
 - Do not alter screenshots in a way that changes evidence. Redact personal data if needed.
 - Record date, browser, and capture conditions if known.
 - Do not include credentials, tokens, cookies, or personal inquiry data.
